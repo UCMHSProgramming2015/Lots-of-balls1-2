@@ -8,16 +8,17 @@ void setup() {
   //initialize variables
   x = width/2;
   y = height/2;
-  diam = 80;
-  velX = random(-5, 5);
-  velY = random(-5, 5);
+  diam = 60;
+  velX = random(-10, 10);
+  velY = random(-10, 10);
 }
 
 void draw() {
   //draw background to cover previous frame
-  background(0);
+  background(200,0,200);
 
   //draw ball
+  fill(100,200,50);
   ellipse(x, y, diam, diam);
 
   //add velocity to position
@@ -30,7 +31,7 @@ void draw() {
   } else if (x - diam/2 <= 0) {
     velX = abs(velX);     //if the ball hits the left wall, assign x velocity the positive version of itself
   }
-  if (y = diam/2 >= height) {
+  if (y + diam/2 >= height) {
     velY = -abs(velY);
   } else if (y - diam/2 <= 0) {
     velY = abs(velY);
