@@ -9,10 +9,10 @@ void setup() {
   x = width/2;
   y = height/2;
   diam = 80;
-  velX = random(-5, 5);
-  velY = random(-5, 5);
-  velX2 = random(-5,5);
-  velY2 = random(-5,5);
+  velX = random(-30, 30);
+  velY = random(-30, 30);
+  velX2 = random(-30,30);
+  velY2 = random(-30,30);
   x2 = 100;
   y2 = 100;
 }
