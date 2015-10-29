@@ -7,6 +7,7 @@ void setup() {
   size(800, 600);
 
   //initialize variables
+  float= new[float];
   x = width/2;
   y = height/2;
   diam = 80;
