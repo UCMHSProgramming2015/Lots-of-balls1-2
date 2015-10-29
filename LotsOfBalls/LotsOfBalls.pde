@@ -1,5 +1,5 @@
 //declare variables
-float x, y, velX, velY, diam;
+float x, y, velX, velY, diam, velX2, velY2, x2, y2;
 
 void setup() {
   //set size of canvas
@@ -8,21 +8,28 @@ void setup() {
   //initialize variables
   x = width/2;
   y = height/2;
+  x2 = width/2;
+  y2 = height/2;
   diam = 80;
   velX = random(-5, 5);
   velY = random(-5, 5);
+  velX2 = random(-6, 6);
+  velY2 = random(-6, 6);
 }
 
 void draw() {
   //draw background to cover previous frame
   background(0);
 
-  //draw ball
+  //draw balls
   ellipse(x, y, diam, diam);
+  ellipse(x2, y2, diam, diam);
 
-  //add velocity to position
+  //add velocity to position of both balls
   x += velX;
   y += velY;
+  x2 += velX2;
+  y2 += velY2;
 
   //bounce ball if it hits walls
   if (x + diam/2 >= width) {
@@ -30,9 +37,22 @@ void draw() {
   } else if (x - diam/2 <= 0) {
     velX = abs(velX);     //if the ball hits the left wall, assign x velocity the positive version of itself
   }
-  if (y = diam/2 >= height) {
-    velY = -abs(velY);
+  if (y + diam/2 >= height) {
+    velY = -abs(velY);    //if the ball hits the bottom wall, assign y velocity the negative version of itself
   } else if (y - diam/2 <= 0) {
-    velY = abs(velY);
+    velY = abs(velY);    //if the ball hits the top wall, assign y velocity the positive version of itself
   }
+  if (x2 + diam/2 >= width) {
+    velX2 = -abs(velX2);    //if the second ball hits the right wall, assign x velocity the negative version of itself
+  } else if (x2 - diam/2 <= 0) {
+    velX2 = abs(velX2);     //if the second ball hits the left wall, assign x velocity the positive version of itself
+  }
+  if (y2 + diam/2 >= height) {
+    velY2 = -abs(velY2);    //if the second ball hits the bottom wall, assign y velocity the negative version of itself
+  } else if (y2 - diam/2 <= 0) {
+    velY2 = abs(velY2);    //if the second ball hits the top wall, assign y velocity the positive version of itself
+  }
+}
+void mousePressed() {
+  fill(random(255), random(255), random(255));  //if the mouse is pressed it changes the fill of both balls
 }
