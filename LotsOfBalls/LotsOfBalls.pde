@@ -30,7 +30,7 @@ void draw() {
   } else if (x - diam/2 <= 0) {
     velX = abs(velX);     //if the ball hits the left wall, assign x velocity the positive version of itself
   }
-  if (y = diam/2 >= height) {
+  if (y + diam/2 >= height) {
     velY = -abs(velY);
   } else if (y - diam/2 <= 0) {
     velY = abs(velY);
