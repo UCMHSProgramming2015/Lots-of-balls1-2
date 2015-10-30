@@ -19,6 +19,7 @@ void draw() {
 
   //draw ball
   ellipse(x, y, diam, diam);
+  ellipse(y, x, diam, diam);
 
   //add velocity to position
   x += velX;
