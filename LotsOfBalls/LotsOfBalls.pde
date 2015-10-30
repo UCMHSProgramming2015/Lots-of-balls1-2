@@ -15,13 +15,10 @@ void draw() {
     if (key == 'a') {
       balls.add(new Ball());
     }
-<<<<<<< HEAD
+
     if (key== 'b'&&balls.size()>2) {
       balls.remove(balls.size()-1);      //always has the first two original ones
-=======
-    if (key== 'b'&&balls.size()>0) {
-      balls.remove(0);
->>>>>>> refs/remotes/origin/Creating-arrasy
+
     }
   }
 
@@ -44,11 +41,7 @@ class Ball {
     a=random(200, 255);
     b=random(200, 255);
     c=random(200, 255);
-<<<<<<< HEAD
     d = random(150, 200);
-=======
-    d = random(70, 90);
->>>>>>> refs/remotes/origin/Creating-arrasy
     diam = random(40, 50);
     x = random(diam, width-diam);
     y = random(diam, height-diam);
