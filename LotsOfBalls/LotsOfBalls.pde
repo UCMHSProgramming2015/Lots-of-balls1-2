@@ -1,4 +1,4 @@
-int count = 300;
+int count = 9001; //it's over 9000
 
 //declare and initialize arrays
 //name = new type[size]
@@ -16,9 +16,9 @@ void setup() {
   int i = 0;
   while(i < count){
     x[i] = random(width);
-    y[1] = random(height);
-    velX[i] = random(-30,30);
-    velY[i] = random(-30,30);
+    y[i] = random(height);
+    velX[i] = random(-5,5);
+    velY[i] = random(-5,5);
     diam[i] = random(20,40);
     i++;
   }
@@ -30,9 +30,7 @@ void draw() {
   //draw background to cover previous frame
   background(0);
   
-  int i = 0;
-  
-  while(i < count){
+  for(int i = 0; i < count; i++){
 
     //draw balls
     ellipse(x[i], y[i], diam[i], diam[i]);
@@ -52,6 +50,5 @@ void draw() {
     } else if (y[i] - diam[i]/2 <= 0) {
       velY[i] = abs(velY[i]);
     }
-    i++;
   }
 }
