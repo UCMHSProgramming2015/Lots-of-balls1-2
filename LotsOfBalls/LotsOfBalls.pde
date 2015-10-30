@@ -14,7 +14,7 @@ float[] x = new float[count];
 float[] y = new float[count];
 float[] velX = new float[count];
 float[] velY = new float[count];
-float[] diam = {30, 80};
+float[] diam = new float[count];
 
 
 void setup() {
@@ -22,15 +22,15 @@ void setup() {
   size(800, 600);
 
   //initialize variables
-  x[0] = width/2;
-  x[1] = width/4;
-  y[0] = height/2;
-  y[1] = height*.8;
-
-  velX[0] = random(-5, 5);
-  velX[1] = random(-1, 1);
-  velY[0] = random(-5, 5);
-  velY[1] = random(-10, 10);
+  int i = 0;
+  while (i < count) {
+    x[i] = random(width);
+    y[i] = random(height);
+    velX[i] = random(-5, 5);
+    velY[i] = random(-5, 5);
+    diam[i] = 10 + i*10;
+    i++;
+  }
 }
 
 void draw() {
