@@ -1,5 +1,5 @@
 //declare variables
-float x, y, velX, velY, diam;
+float x, y, velX, velY, diam,a ,b, velA, velB ;
 
 void setup() {
   //set size of canvas
@@ -11,6 +11,10 @@ void setup() {
   diam = 80;
   velX = random(-5, 5);
   velY = random(-5, 5);
+  a= width/3;
+  b= height/2;
+  velA= random(-10,10);
+  velB = random(-10,10);
 }
 
 void draw() {
@@ -34,5 +38,19 @@ void draw() {
     velY = -abs(velY);
   } else if (y - diam/2 <= 0) {
     velY = abs(velY);
+  }
+  ellipse(a,b,diam,diam);
+  a+=velA;
+  b += velB;
+  
+  if(a + diam/2 >= width) {
+    velA =-abs(velA);
+  } else if (a-diam/2 <=0) {
+    velA = abs(velA);
+  }
+  if (b + diam/2 >= height) {
+   velB = -abs(velB);
+  } else if( b-diam/2 <= 0) {
+    velB = abs(velB);
   }
 }
