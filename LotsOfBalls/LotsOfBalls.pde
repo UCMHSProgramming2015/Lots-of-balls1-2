@@ -12,26 +12,25 @@ void setup() {
   //set size of canvas
   size(800, 600);
 
-  int i = 0; 
-  while(i < count){
+
+  for (int i = 0; i < count; i++) {
     x[i] = random(width);
     y[i] = random(height);
     velX[i] = random(-5, 5);
     velY[i] = random(-5, 5);
-    diam[i] = random(30,70);
-    i++;
+    diam[i] = random(30, 70);
   }
 }
 
 void draw() {
 
-  
+
   //draw background to cover previous frame
   background(0);
 
-  int i = 0;
-  while(i < count){
-    
+
+  for (int i = 0; i < count; i++) {
+
     //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
 
@@ -50,6 +49,5 @@ void draw() {
     } else if (y[i] - diam[i]/2 <= 0) {
       velY[i] = abs(velY[i]);
     }
-    i++;
   }
 }
