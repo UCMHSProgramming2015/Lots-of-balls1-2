@@ -7,7 +7,7 @@
 //name = new type[size];
 //name = {insert data here};
 
-int count = 2;
+int count = 300;
 
 //declare and initialize arrays
 float[] x = new float[count];
@@ -28,7 +28,7 @@ void setup() {
     y[i] = random(height);
     velX[i] = random(-5, 5);
     velY[i] = random(-5, 5);
-    diam[i] = 10 + i*10;
+    diam[i] = random(20, 80);
     i++;
   }
 }
