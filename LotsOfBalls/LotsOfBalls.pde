@@ -1,5 +1,6 @@
+
 //declare variables
-float x, y, velX, velY, diam;
+float x, y, x2, y2, velX, velY, diam;
 
 void setup() {
   //set size of canvas
@@ -24,7 +25,9 @@ void draw() {
   //add velocity to position
   x += velX;
   y += velY;
-
+  x2 += velX;
+  y2 += velY;
+  
   //bounce ball if it hits walls
   if (x + diam/2 >= width) {
     velX = -abs(velX);    //if the ball hits the right wall, assign x velocity the negative version of itself
