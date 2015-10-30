@@ -19,7 +19,7 @@ void setup() {
     x[i]=random(height);
     velX[i]=random(-5, 5);
     velY[i]=random(-5, 5);
-    diam[i]=10;
+    diam[i]=20;
   }
 }
 
@@ -44,15 +44,15 @@ void draw() {
     //bounce ball if it hits walls
     if (x[i] + diam[i]/2 >= width) {
       velX[i] = -abs(velX[i]);    //if the ball hits the right wall, assign x velocity the negative version of itself
-      fill(100, 180, 250);
+      fill(100, 180, 250); //if the ball hits the right wall it changes color
     } else if (x[i] - diam[i]/2 <= 0) {
       velX[i] = abs(velX[i]);     //if the ball hits the left wall, assign x velocity the positive version of itself
       fill(100, 250, 150);
     }
-    if (y[i] + diam[i]/2 >= height) {
+    if (y[i] + diam[i]/2 >= height) { //if the ball hits the top wall, assign y velocity the positive version of itself
       velY[i] = -abs(velY[i]);
       fill(200, 250, 250);
-    } else if (y[i] - diam[i]/2 <= 0) {
+    } else if (y[i] - diam[i]/2 <= 0) { //if the ball hits the bottom wall, assign y velocity the positive version of itself
       velY[i] = abs(velY[i]);
     }
   }
