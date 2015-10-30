@@ -29,7 +29,7 @@ void setup() {
 void draw() {
   //draw background to cover previous frame
   background(200, 50, 100);
-
+  //for through the balls
   for (int j = 0; j<c; j++) {
     //Fill blue if touching other ball, otherwise white.
     for(int k = 0; k<c; k++) {
@@ -46,7 +46,7 @@ void draw() {
     y[j] += velY[j];
     //bounce ball if it hits walls
     if (x[j] + diam[j]/2 >= width ||x[j] - diam[j]/2 <= 0) {
-      velX[j] = -velX[j];    //reverse direction at wall
+      velX[j] = -velX[j];
     }
     if (y[j] + diam[j]/2 >= height || y[j] - diam[j]/2 <= 0) {
       velY[j] = -velY[j];
