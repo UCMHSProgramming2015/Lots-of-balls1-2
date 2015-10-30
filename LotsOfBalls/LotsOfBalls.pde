@@ -6,16 +6,17 @@ void setup() {
   size(800, 600);
   //initialize variables
   smooth();
-  balls.add(new Ball());
+  balls.add(new Ball());                //adds two balls to start
   balls.add(new Ball());
 }
 
 void draw() {
+  //pressing a will add more balls
   if (keyPressed) {
     if (key == 'a') {
       balls.add(new Ball());
     }
-
+   //pressing b will remove balls
     if (key== 'b'&&balls.size()>2) {
       balls.remove(balls.size()-1);      //always has the first two original ones
 
@@ -25,7 +26,9 @@ void draw() {
   //draw background to cover previous frame
   background(255);
   fill(0);
+  //direction text 
   text("press a to add more, b for less", 375, 50);
+  //pulls balls from arraylist
   for (int i =0; i<balls.size(); i++) {
     Ball b = balls.get(i);
     //draw ball
@@ -33,21 +36,27 @@ void draw() {
     b.move();
   }
 }
+//create class
 class Ball {
   float x, y, velX, velY, a, b, c, d, diam;
 
-
+  //the variables inside object Ball
   Ball() {
+    //random color creator - light colors
     a=random(200, 255);
     b=random(200, 255);
     c=random(200, 255);
+    //random opacity - reasonably opaque
     d = random(150, 200);
+    //random diam between 40 and 50
     diam = random(40, 50);
+    //random start position and velocity
     x = random(diam, width-diam);
     y = random(diam, height-diam);
     velX = random(-5, 5);
     velY = random(-5, 5);
   }
+  //displays each ball
   void display() {
     noStroke();
     fill(a, b, c, d);
