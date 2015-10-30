@@ -1,6 +1,14 @@
 //declare variables
-float x1, y1, x2, y2, velX1, velY1, velX2, velY2, diam;
-float colorx1, colory1, colorz1, colorx2, colory2, colorz2;
+//float x1, y1, velX1, velY1, diam;
+//float colorx1, colory1, colorz1, 
+float diam;
+float [] x = new float [2];
+float [] y = new float [2];
+float [] velX = new float [2];
+float [] velY = new float [2];
+float [] colorx = new float [2];
+float [] colory = new float [2];
+float [] colorz = new float [2];
 
 void setup() {
   //set size of canvas
