@@ -3,7 +3,7 @@ float x, y, velX, velY, diam;
 
 void setup() {
   //set size of canvas
-  size(800, 600);
+  size(800, 800);
 
   //initialize variables
   x = width/2;
