@@ -1,12 +1,12 @@
 //declare variables
-int c = 100;
+int c = 40;
 float[] x = new float[c]; 
 float[] y = new float[c];
 float[] velX = new float[c];
 float[] velY = new float[c];
 float[] diam = new float[c];
-boolean touch=false;
 
+//distance function
 float d(float x1,float y1,float x2,float y2) {
   return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
 }
@@ -23,6 +23,7 @@ void setup() {
     velX[i] = random(-10, 10);
     velY[i] = random(-10, 10);
   }
+  noStroke();
 }
 
 void draw() {
