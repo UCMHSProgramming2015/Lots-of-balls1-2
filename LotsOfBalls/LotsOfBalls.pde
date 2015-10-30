@@ -15,12 +15,15 @@ void draw() {
     if (key == 'a') {
       balls.add(new Ball());
     }
+    if (key== 'b'&&balls.size()>0) {
+      balls.remove(0);
+    }
   }
 
   //draw background to cover previous frame
-  background(0);
-  fill(255);
-  text("press a to add more",375,50);
+  background(255);
+  fill(0);
+  text("press a to add more, b for less", 375, 50);
   for (int i =0; i<balls.size(); i++) {
     Ball b = balls.get(i);
     //draw ball
@@ -29,21 +32,23 @@ void draw() {
   }
 }
 class Ball {
-  float x, y, velX, velY, a, b, c;
-  float diam = 30;
-  
+  float x, y, velX, velY, a, b, c, d, diam;
+
+
   Ball() {
-    a=random(0,255);
-    b=random(0,255);
-    c=random(0,255);
+    a=random(200, 255);
+    b=random(200, 255);
+    c=random(200, 255);
+    d = random(70, 90);
+    diam = random(40, 50);
     x = random(diam, width-diam);
     y = random(diam, height-diam);
-    velX = random(-7, 7);
-    velY = random(-7, 7);
+    velX = random(-5, 5);
+    velY = random(-5, 5);
   }
   void display() {
     noStroke();
-    fill(a,b,c);
+    fill(a, b, c, d);
     ellipse(x, y, diam, diam);
   }
   void move() {
