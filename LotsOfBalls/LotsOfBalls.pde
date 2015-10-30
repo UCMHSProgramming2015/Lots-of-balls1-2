@@ -3,6 +3,7 @@ class Ball{
   float x, y;
   float velX, velY;
   float diam;
+  float hue;
   
   Ball(){
     //initialize variables
@@ -11,6 +12,7 @@ class Ball{
     diam = 80;
     velX = random(-5, 5);
     velY = random(-5, 5);
+    hue = random(255);
   }
   
   void run(){
@@ -29,21 +31,31 @@ class Ball{
     //add velocity to position
     x += velX;
     y += velY;
+    
+    //increment the hue
+    hue++;
   }
   void bdraw(){
     //draw ball
+    fill(hue % 255, 255, 255);
     ellipse(x, y, diam, diam);
   }
 }
 
-ArrayList<Ball> balls = new ArrayList<Ball>();
+int bnum = 300;
+
+Ball[] balls = new Ball[bnum];
 
 void setup() {
+  
+  colorMode(HSB, 255);
+  
   //set size of canvas
   size(800, 600);
   
-  balls.add(new Ball());
-  balls.add(new Ball());
+  for(int i = 0; i < bnum; i++){
+    balls[i] = new Ball();
+  }
 }
 
 void draw() {
