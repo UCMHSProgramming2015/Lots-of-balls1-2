@@ -20,10 +20,10 @@ void setup() {
     diam[i] = random(20,40);
     x[i] = random(diam[i], width-diam[i]);
     y[i] = random(diam[i], height-diam[i]);
-    velX[i] = random(-10, 10);
-    velY[i] = random(-10, 10);
+    velX[i] = random(-6, 6);
+    velY[i] = random(-6, 6);
   }
-  noStroke();
+  stroke(200,50,200);
 }
 
 void draw() {
