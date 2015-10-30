@@ -37,7 +37,8 @@ void draw() {
   for (int i = 0; i < count; i++) {
 
     //draw ball
-    fill(r[i],g[i],b[i]);
+    stroke(r[i],g[i],b[i]);
+    fill(r[i],g[i],b[i], 95);
     ellipse(x[i], y[i], diam[i], diam[i]);
 
     //add velocity to position
