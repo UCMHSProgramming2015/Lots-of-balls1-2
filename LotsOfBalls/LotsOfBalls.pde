@@ -1,15 +1,15 @@
 
-int count = 300;
+int count = 300; //create 300 balls
 
 //declare and initialize arrays
 //name = new type[size]
 //name = {insert data here}
-float[] x = new float[count];
+float[] x = new float[count]; //create location and movement variables for balls
 float[] y = new float[count];
 float[] velX = new float[count];
 float[] velY = new float[count];
 float[] diam = new float[count];
-float[] r = new float[count];
+float[] r = new float[count]; //create color variables for balls
 float[] g = new float[count];
 float[] b = new float[count];
 
@@ -17,29 +17,29 @@ void setup() {
   //set size of canvas
   size(800, 600);
 
-  int i = 0;
+  int i = 0; //change variables for each ball
   while(i < count){
-    x[i] = random(width);
+    x[i] = random(width); //spawn each ball inside the canvas
     y[i] = random(height);
-    velX[i] = random(-5,5);
+    velX[i] = random(-5,5); //move each ball at a max rate of 5 in a random direction
     velY[i] = random(-5,5);
-    diam[i] = random(5,100);
-    r[i] = random(0,255);
+    diam[i] = random(5,100); //make each ball a radically different size
+    r[i] = random(0,255); //randomize the color of each ball
     g[i] = random(0,255);
     b[i] = random(0,255);
-    i++;
+    i++; //increase i by 1 during each cycle; have different instances of the above variables for each ball
   }
   
   //initialize variables
 }
 
-void draw() {
+void draw() { 
   //draw background to cover previous frame
-  background(0);
+  background(0); //black background
   
-  for(int i = 0; i < count; i++){
+  for(int i = 0; i < count; i++){ //initialize i as 0; draw 300 balls and change the variables each time
 
-    stroke(r[i],g[i],b[i]);
+    stroke(r[i],g[i],b[i]); //color balls
     fill(r[i],g[i],b[i],40);
     //draw balls
     ellipse(x[i], y[i], diam[i], diam[i]);
@@ -54,10 +54,10 @@ void draw() {
     } else if (x[i] - diam[i]/2 <= 0) {
       velX[i] = abs(velX[i]);     //if the ball hits the left wall, assign x velocity the positive version of itself
     }
-    if (y[i] + diam[i]/2 >= height) {
+    if (y[i] + diam[i]/2 >= height) { //if the ball hits the bottom wall, reverse its y velocity
       velY[i] = -abs(velY[i]);
-    } else if (y[i] - diam[i]/2 <= 0) {
-      velY[i] = abs(velY[i]);
+    } else if (y[i] - diam[i]/2 <= 0) { //if the ball hits the top wall, reverse its y velocity
+      velY[i] = abs(velY[i]); 
     }
   }
 }
