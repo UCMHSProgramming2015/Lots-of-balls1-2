@@ -1,11 +1,11 @@
 //declare variables
-float [] x = {0,0,0};
-float [] y = {0,0,0};
-float [] velX = {0,0,0};
-float [] velY = {0,0,0};
-float [] diam = {0,0,0};
-float [] transp = {0,0,0};
-int num = 2;
+int num = 300;
+float [] x = new float[num];
+float [] y = new float[num];
+float [] velX = new float[num];
+float [] velY = new float[num];
+float [] diam = new float[num];
+color [] c = new color[num];
 
 void setup() {
   //set size of canvas
@@ -13,7 +13,7 @@ void setup() {
 
   //initialize variables
   for(int i = 0; i < num; i++) {
-    transp[i] = random(64,192);
+    c[i] = color(255,random(64,192));
     x[i] = random(width);
     y[i] = random(height);
     diam[i] = random(5,50);
@@ -28,7 +28,7 @@ void draw() {
 
   for (int i = 0; i < num; i += 1) {
   //change color and draw ball
-    fill(255,transp[i]);
+    fill(c[i]);
     ellipse(x[i], y[i], diam[i], diam[i]);
 
   //add velocity to position
