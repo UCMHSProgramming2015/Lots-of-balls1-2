@@ -1,6 +1,25 @@
-//declare variables
-float x, y, velX, velY, diam;
-float x1, y1, velX1, velY1, diam1;
+//declaring arrays
+//int[] numbers;
+//color[] c;
+//float[] n;
+
+//initializing arrays
+//numbers = new int[10];
+//c = new color[5];
+//n = {35.6, 41.7,2.0001};
+
+//declaring and initializing arrays
+//int[] numbers = new int[200];
+
+//declare arrays
+float[] x = new float[2];
+float[] y = new float[2];
+float[] velX = new float[2];
+float[] velY = new float[2];
+float[] diam = new float[2];
+
+
+
 
 void setup() {
   //set size of canvas
