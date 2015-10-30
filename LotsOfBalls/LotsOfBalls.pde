@@ -3,7 +3,7 @@ float x, y, velX, velY, diam;
 
 void setup() {
   //set size of canvas
-  size(800, 600);
+  size(600, 600);
 
   //initialize variables
   x = width/2;
@@ -19,6 +19,7 @@ void draw() {
 
   //draw ball
   ellipse(x, y, diam, diam);
+  ellipse(y, x, diam, diam);
 
   //add velocity to position
   x += velX;
