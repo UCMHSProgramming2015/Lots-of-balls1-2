@@ -1,4 +1,4 @@
-int count = 9001; //it's over 9000
+int count = 300; //it's over 9000
 
 //declare and initialize arrays
 //name = new type[size]
@@ -19,7 +19,7 @@ void setup() {
     y[i] = random(height);
     velX[i] = random(-5,5);
     velY[i] = random(-5,5);
-    diam[i] = random(20,40);
+    diam[i] = random(5,100);
     i++;
   }
   
