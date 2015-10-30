@@ -8,6 +8,9 @@ float[] y = new float[count];
 float[] velX = new float[count];
 float[] velY = new float[count];
 float[] diam = new float[count];
+float[] r = new float[count];
+float[] g = new float[count];
+float[] b = new float[count];
 
 void setup() {
   //set size of canvas
@@ -20,6 +23,9 @@ void setup() {
     velX[i] = random(-5,5);
     velY[i] = random(-5,5);
     diam[i] = random(5,100);
+    r[i] = random(0,255);
+    g[i] = random(0,255);
+    b[i] = random(0,255);
     i++;
   }
   
@@ -32,6 +38,7 @@ void draw() {
   
   for(int i = 0; i < count; i++){
 
+    fill(r[i],g[i],b[i]);
     //draw balls
     ellipse(x[i], y[i], diam[i], diam[i]);
 
