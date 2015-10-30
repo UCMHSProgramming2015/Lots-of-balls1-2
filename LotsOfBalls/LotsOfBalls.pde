@@ -1,4 +1,5 @@
-int count = 300; //it's over 9000
+
+int count = 300;
 
 //declare and initialize arrays
 //name = new type[size]
@@ -38,7 +39,8 @@ void draw() {
   
   for(int i = 0; i < count; i++){
 
-    fill(r[i],g[i],b[i]);
+    stroke(r[i],g[i],b[i]);
+    fill(r[i],g[i],b[i],40);
     //draw balls
     ellipse(x[i], y[i], diam[i], diam[i]);
 
