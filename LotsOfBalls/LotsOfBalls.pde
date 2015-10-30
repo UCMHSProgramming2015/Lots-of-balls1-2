@@ -1,5 +1,5 @@
 //declare variables
-int count=50;
+int count=200;
 
 float[]x=new float[count];
 float[]y=new float[count];
@@ -12,16 +12,14 @@ void setup() {
   size(800, 600);
 
   //initialize local variables
-  int i=0;
-  
-  //create a while statement
-  while (i < count) {
+  for (int i=0; i < count; i++) {
+
+    //create a while statement
     x[i]=random(width);
     x[i]=random(height);
     velX[i]=random(-5, 5);
     velY[i]=random(-5, 5);
-    diam[i]=10 +i;
-    i++;
+    diam[i]=10;
   }
 }
 
@@ -30,10 +28,9 @@ void draw() {
   background(0);
 
   //redefine the local variable
-  int i=0;
 
   //create a while statement
-  while (i<count) {
+  for (int i=0; i <count; i++) {
 
     //draw balls
     ellipse(x[i], y[i], diam[i], diam[i]);
@@ -47,14 +44,16 @@ void draw() {
     //bounce ball if it hits walls
     if (x[i] + diam[i]/2 >= width) {
       velX[i] = -abs(velX[i]);    //if the ball hits the right wall, assign x velocity the negative version of itself
+      fill(100, 180, 250);
     } else if (x[i] - diam[i]/2 <= 0) {
       velX[i] = abs(velX[i]);     //if the ball hits the left wall, assign x velocity the positive version of itself
+      fill(100, 250, 150);
     }
     if (y[i] + diam[i]/2 >= height) {
       velY[i] = -abs(velY[i]);
+      fill(200, 250, 250);
     } else if (y[i] - diam[i]/2 <= 0) {
       velY[i] = abs(velY[i]);
     }
-    i++;
   }
 }
