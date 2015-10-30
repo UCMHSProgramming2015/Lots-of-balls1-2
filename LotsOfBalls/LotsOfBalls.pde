@@ -4,7 +4,6 @@ ArrayList<Ball> balls = new ArrayList<Ball>();
 void setup() {
   //set size of canvas
   size(800, 600);
-
   //initialize variables
   smooth();
   balls.add(new Ball());
@@ -20,6 +19,8 @@ void draw() {
 
   //draw background to cover previous frame
   background(0);
+  fill(255);
+  text("press a to add more",375,50);
   for (int i =0; i<balls.size(); i++) {
     Ball b = balls.get(i);
     //draw ball
@@ -28,16 +29,21 @@ void draw() {
   }
 }
 class Ball {
-  float x, y, velX, velY;
-  float diam = 50;
+  float x, y, velX, velY, a, b, c;
+  float diam = 30;
+  
   Ball() {
+    a=random(0,255);
+    b=random(0,255);
+    c=random(0,255);
     x = random(diam, width-diam);
     y = random(diam, height-diam);
     velX = random(-7, 7);
     velY = random(-7, 7);
   }
   void display() {
-
+    noStroke();
+    fill(a,b,c);
     ellipse(x, y, diam, diam);
   }
   void move() {
