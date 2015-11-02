@@ -26,18 +26,18 @@ float [] diam = new float [2];
 void setup() {
   //set size of canvas
   size(800, 600);
-
-  //initialize variables
- x[0] = width/2;
- y[0] = height/2;
- diam[0] = 80;
- velX[0] = random(-5, 5);
- velY[0] = random(-5, 5);
- x[1]=width/2;
- y[1]=height/2;
- diam[1]=30;
- velX[1]=random(-10,10);
- velY[1]=random(-10,10);
+  
+  //declare a local variable called i- only for the setup
+  int i=0;
+ //initialize variables
+  while(i<2){
+x[i]=random(0,width);
+y[i]=random(0,height);
+diam[i]=random(5,100);
+velX[i]=random(-5,5);
+velY[i]=random(-5,5);
+i++; // i increases by 1
+  }
 }
 
 void draw() {
