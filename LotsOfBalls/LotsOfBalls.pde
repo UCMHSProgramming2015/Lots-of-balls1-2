@@ -8,7 +8,7 @@
 //c = new color[5];
 //n = {35.6, 41.7, 2.001};
 
-//delcaring and initializing arrays
+//declaring and initializing arrays
 //int[] numbers = new int[200];
 
 
@@ -24,17 +24,19 @@ float[] diam = new float[2];
 void setup() {
   //set size of canvas
   size(800, 600);
+  
+  //declare a local variable called i
+  int i = 0;
 
   //initialize variables
-  x[0] = width/2;
-  y[0] = height/2;
-  x[1] = width/4;
-  y[1] = height/4;
-  diam[0] = 80;
-  velX[0] = random(-5, 5);
-  velY[0] = random(-5, 5);
-  velX[1] = random (10, 20);
-  velY[1] = random (10, 20);
+  while (i < 2) {
+    x[i] = random(width);
+    y[i] = random(height);
+    diam[i] = random(5,100);
+    velX[i] = random(-5,5);
+    velY[i] = random(-5,5);
+    i++;
+  }
 }
 
 void draw() {
