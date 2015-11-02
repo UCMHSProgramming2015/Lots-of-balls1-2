@@ -28,7 +28,7 @@ void draw() {
   //draw background to cover previous frame
   background(0);
 
-
+//initialize local variable
   int i=0;
   while (i<count) {
     //draw ball
