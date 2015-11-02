@@ -1,18 +1,6 @@
-//declaring arrays
-//int[] numbers;
-//color[] c;
 
 
-//initializing arrays
-//numbers = new int[10];
-//c = new color[5];
-//n = {35.6, 41.7, 2.0001};
-
-//declaring and initializing arrays
-//int[] numbers = new int[200];
-
-
-//declare variables
+//declare arrays
 float[] x = new float[2];
 float[] y = new float[2];
 float[] velX = new float[2];
@@ -24,6 +12,8 @@ float[] diam = new float[2];
 void setup() {
   //set size of canvas
   size(800, 600);
+  //declare a local variable called i
+  int i = 0;
 
   //initialize variables
   x[0] = width/2;
@@ -36,8 +26,17 @@ void setup() {
   velX[1] = 10;
   velY[1] = 10;
   diam[1] = 80;
+  //initialize variables
+  while (i < 2) {
+  x[i] = random(width);
+  y[i] = random(height);
+  diam[i] = random(5,100);
+  velX[i] = random(-5,5);
+  velY[i] = random(-5,5);
+  //i increases by 1
+  i ++ ;
 }
-
+}
 void draw() {
   //draw background to cover previous frame
   background(0);
