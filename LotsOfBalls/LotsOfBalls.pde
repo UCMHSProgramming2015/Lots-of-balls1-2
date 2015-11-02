@@ -13,12 +13,13 @@
 //declaring and initializing arrays
 //int[] numbers= new int[200];     creates space for 200 new integers
 
+int count=50;
 //declare arrays
-float [] x = new float [2];
-float [] y = new float [2];
-float []velX = new float [2];
-float [] velY = new float [2];
-float [] diam = new float [2];
+float [] x = new float [count];
+float [] y = new float [count];
+float []velX = new float [count];
+float [] velY = new float [count];
+float [] diam = new float [count];
 
 
 
@@ -29,7 +30,7 @@ void setup() {
   //declare a local variable called i- only for the setup
   int i=0;
  //initialize variables
-  while(i<2){
+  while(i<count){
 x[i]=random(0,width);
 y[i]=random(0,height);
 diam[i]=random(5,100);
@@ -44,7 +45,7 @@ void draw() {
   background(0);
 //declare local variable j
   int j=0;
-  while(j<2){
+  while(j<count){
    ellipse(x[j], y[j], diam[j], diam[j]);    //draw ball
 
    //add velocity to position
