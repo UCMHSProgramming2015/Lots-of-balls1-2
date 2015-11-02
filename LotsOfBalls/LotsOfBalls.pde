@@ -11,17 +11,15 @@ void setup() {
   size(800, 600);
 
   //initialize variables
-  x[0] = width/2;
-  y[0] = height/2;
-  diam[0] = 80;
-  velX[0] = random(-5, 5);
-  velY[0] = random(-5, 5);
-  
-  x[1] = width/4;
-  y[1] = height/4;
-  diam[1] = 80;
-  velX[1] = random(-10, 10);
-  velY[1] = random(-10, 10);
+  int i = 0;
+ while (i < 2) {
+  x[i] = random(width);
+  y[i] = random(height);
+  diam[i] = 80;
+  velX[i] = random(-10, 10);
+  velY[i] = random(-10, 10);
+  i++;
+ }
 }
 
 void draw() {
