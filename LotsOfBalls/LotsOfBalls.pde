@@ -1,10 +1,11 @@
-//delcare and initialize array
+int count = 50; //number of balls
 
-float[] x = new float[2];
-float[] y = new float[2];
-float[] velX = new float[2];
-float[] velY = new float[2];
-float[] diam = new float[2];
+//delcare and initialize array
+float[] x = new float[count];
+float[] y = new float[count];
+float[] velX = new float[count];
+float[] velY = new float[count];
+float[] diam = new float[count];
 
 void setup() {
   //set size of canvas
@@ -12,7 +13,7 @@ void setup() {
 
   //initialize variables
   int i = 0;
- while (i < 2) {
+ while (i < count) {
   x[i] = random(width);
   y[i] = random(height);
   diam[i] = 80;
@@ -26,7 +27,7 @@ void draw() {
   //draw background to cover previous frame
   background(0);
   int i = 0;
- while (i < 2) {
+ while (i < count) {
     //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
   
