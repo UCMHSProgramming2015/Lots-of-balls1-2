@@ -15,7 +15,7 @@ void setup() {
   diam[0] = 80;
   velX[0] = random(-5, 5);
   velY[0] = random(-5, 5);
-   x[1] = width/2;
+  x[1] = width/2;
   y[1] = height/2;
   diam[1] = 80;
   velX[1] = random(-5, 5);
@@ -32,17 +32,17 @@ void draw() {
   x[0] += velX[0];
   y[0] += velY[0];
 
- ellipse(x[1], y[1], diam[1], diam[1]);
+  ellipse(x[1], y[1], diam[1], diam[1]);
 
   //add velocity to position
   x[1] += velX[1];
   y[1] += velY[1];
- 
-    velX[1] = -abs(velX[1]);    //if the ball hits the right wall, assign x velocity the negative version of itself
+
   
-  
+
+
   //bounce ball if it hits walls
-  if (x[0] + diam[0]/2 >= width){
+  if (x[0] + diam[0]/2 >= width) {
     velX[0] = -abs(velX[0]);    //if the ball hits the right wall, assign x velocity the negative version of itself
   } else if (x[0] - diam[0]/2 <= 0) {
     velX[0] = abs(velX[0]);     //if the ball hits the left wall, assign x velocity the positive version of itself
@@ -52,14 +52,14 @@ void draw() {
   } else if (y[0] - diam[0]/2 <= 0) {
     velY[0] = abs(velY[0]);
   }
-
-
- else if (x[1] - diam[1]/2 <= 0){
+  if (x[1] + diam[1]/2 >= width) {
+    velX[1] = -abs(velX[1]);
+  } else if (x[1] - diam[1]/2 <= 0) {
     velX[1] = abs(velX[1]);     //if the ball hits the left wall, assign x velocity the positive version of itself
- }
+  }
   if (y[1] + diam[1]/2 >= height) {
     velY[1] = -abs(velY[1]);
   } else if (y[1] - diam[1]/2 <= 0) {
     velY[1] = abs(velY[1]);
   }
-  }
+}
