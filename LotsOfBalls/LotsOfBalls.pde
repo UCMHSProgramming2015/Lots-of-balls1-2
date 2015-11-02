@@ -1,9 +1,11 @@
+int count = 50;
+
 //declare arrays
-float[] x = new float[2];
-float[] y = new float[2];
-float[] velX = new float[2];
-float[] velY = new float[2];
-float[] diam = new float[2];
+float[] x = new float[count];
+float[] y = new float[count];
+float[] velX = new float[count];
+float[] velY = new float[count];
+float[] diam = new float[count];
 
 
 
@@ -16,7 +18,7 @@ void setup() {
   int i = 0;
 
   //initialize variables
-  while (i < 2) {
+  while (i < count) {
     x[i] = random(width);
     y[i] = random(height);
     velX[i] = random(-5, 5);
@@ -32,7 +34,7 @@ void draw() {
 
   //declare local variable i
   int i = 0;
-  while (i < 2) {
+  while (i < count) {
     //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
 
