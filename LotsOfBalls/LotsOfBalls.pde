@@ -28,16 +28,16 @@ void setup() {
   size(800, 600);
 
   //initialize variables
-  x[0] = width/2;
-  y[0] = height/2;
-  x[1]=width/2;
-  y[1]=height/2;
-  diam[0] = 80;
-  diam[1]=30;
-  velX[0] = random(-5, 5);
-  velY[0] = random(-5, 5);
-  velX[1]=random(-10,10);
-  velY[1]=random(-10,10);
+ x[0] = width/2;
+ y[0] = height/2;
+ diam[0] = 80;
+ velX[0] = random(-5, 5);
+ velY[0] = random(-5, 5);
+ x[1]=width/2;
+ y[1]=height/2;
+ diam[1]=30;
+ velX[1]=random(-10,10);
+ velY[1]=random(-10,10);
 }
 
 void draw() {
