@@ -1,5 +1,5 @@
 //declare variables
-int count = 2;
+int count = 400;
 float [] x = new float[count]; 
 float [] y = new float[count]; 
 float [] velX = new float[count]; 
@@ -14,9 +14,9 @@ void setup() {
   
   //initialize variables
   while (i < count){
-  x[i] = width/2;
-  y[i] = height/2;
-  diam[i] = random (20, 80);
+  x[i] = random (width);
+  y[i] = random (height);
+  diam[i] = random (10, 100);
   velX[i] = random(-5, 5);
   velY[i] = random(-5, 5);
  i++;
@@ -31,6 +31,7 @@ void draw() {
 
 while (i<count){
   //draw ball
+  fill (random(255), random(255), random(255));
   ellipse(x[i], y[i], diam[i], diam[i]);
   
   //add velocity to position
