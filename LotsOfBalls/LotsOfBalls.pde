@@ -18,6 +18,7 @@ float[] velX = new float[2];
 float[] velY = new float[2];
 float[] velA = new float[2];
 float[] velB = new float[2];
+int i = 0;
 
 //declaring AND initializing arrays
 //int[] numbers = new int[200];
@@ -28,15 +29,16 @@ void setup() {
   size(800, 600);
 
   //initialize variables
-  x[0] = width/2;
-  y[0] = height/2;
-  a[1] = 100;
-  b[1] = 200;
-  diam[0] = 80;
-  velX[0] = random(-5, 5);
-  velY[0] = random(-5, 5);
-  velA[1] = 10;
-  velB[1] = 10;
+  while (i < 2){
+x[i] = random(width);
+y[i] = random(height);
+velX[i] = random(-5, 5);
+velY[i] = random(-5, 5);
+velA[i] = random(-5, 5);
+velB[i] = random(-5, 5);
+diam[i] = random(5, 100);
+i++;
+  }
 }
 
 void draw() {
