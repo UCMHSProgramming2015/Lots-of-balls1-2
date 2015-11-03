@@ -32,9 +32,11 @@ void draw() {
   background(0);
   int i = 0;
   while (i<150) {
+    //set stroke weight and color
     strokeWeight(7);
     stroke(colorx[i], colory[i], colorz[i]);
     
+    //set colors
     if (colorSet == 0) {
       colorx[i] = y[i];
       colory[i] = 2*x[i]/y[i];
@@ -50,7 +52,6 @@ void draw() {
       colory[i]=y[i];
       colorz[i]=2*x[i]/y[i];
     }
-
     noFill();
 
     //draw ball
@@ -59,8 +60,8 @@ void draw() {
     //add velocity to position
     x[i] += velX[i];
     y[i] += velY[i];
+    
     //bounce ball if it hits walls
-
     if (x[i] + diam/2 >= width) {
      velX[i] = -abs(velX[i]);    //if the ball hits the right wall, assign x velocity the negative version of itself
     } else if (x[i] - diam/2 <= 0) {
@@ -77,6 +78,7 @@ void draw() {
 }
 
 void mousePressed() {
+  //change colors when mouse is pressed
    if (colorSet == 0) {
      colorSet = 1;
    }
