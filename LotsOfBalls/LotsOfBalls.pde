@@ -1,15 +1,18 @@
-int count = 50; //number of balls
+int count = 60; //number of balls
 
-//delcare and initialize array
+//declare and initialize array
 float[] x = new float[count];
 float[] y = new float[count];
 float[] velX = new float[count];
 float[] velY = new float[count];
 float[] diam = new float[count];
+float[] hue = new float[count];
+
 
 void setup() {
   //set size of canvas
   size(800, 600);
+  colorMode(HSB, 255);
 
   //initialize variables
 
@@ -17,9 +20,9 @@ void setup() {
   x[i] = random(width);
   y[i] = random(height);
   diam[i] = 80;
-  velX[i] = random(-10, 10);
-  velY[i] = random(-10, 10);
-
+  velX[i] = random(-30, 30);
+  velY[i] = random(-30, 30);
+  hue[i] = random(255);
  }
 }
 
@@ -29,7 +32,7 @@ void draw() {
   for(int i = 0; i < count; i++) {
     //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
-  
+    fill(hue[i], 255, 255); //set fill of circle
     //add velocity to position
     x[i] += velX[i];
     y[i] += velY[i];
