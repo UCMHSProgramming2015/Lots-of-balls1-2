@@ -58,10 +58,6 @@ void draw() {
   } else if (y[i] - diam[i]/2 <= 0) {
     velY[i] = abs(velY[i]);
   }
-  if (x[1] + diam[1]/2 >= width) {
-    velX[1] = -abs(velX[1]);    //if the ball hits the right wall, assign x velocity the negative version of itself
-  } else if (x[1] - diam[1]/2 <= 0) {
-    velX[1] = abs(velX[1]);     //if the ball hits the left wall, assign x velocity the positive version of itself
-  }
+ 
 }
 }
