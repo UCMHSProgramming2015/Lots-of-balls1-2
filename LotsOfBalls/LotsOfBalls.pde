@@ -1,19 +1,19 @@
 //declare variables
 float diam;
-float [] x = new float [100];
-float [] y = new float [100];
-float [] velX = new float [100];
-float [] velY = new float [100];
-float [] colorx = new float [100];
-float [] colory = new float [100];
-float [] colorz = new float [100];
+float [] x = new float [200];
+float [] y = new float [200];
+float [] velX = new float [200];
+float [] velY = new float [200];
+float [] colorx = new float [200];
+float [] colory = new float [200];
+float [] colorz = new float [200];
 
 
 void setup() {
   //set size of canvas
   size(600, 600);
   int i = 0;
-  while (i<100) {
+  while (i<200) {
     //initialize variables
     x[i] = random(width);
     y[i] = random(height);
@@ -31,8 +31,8 @@ void draw() {
   //draw background to cover previous frame
   background(0);
   int i = 0;
-  while (i<100) {
-    strokeWeight(5);
+  while (i<200) {
+    strokeWeight(7);
     colorx[i]=x[i];
     colory[i]=y[i];
     colorz[i]=2*x[i]/y[i];
