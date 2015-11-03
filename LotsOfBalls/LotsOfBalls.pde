@@ -43,6 +43,7 @@ ellipse(x[i], y[i], diam[i], diam[i]);
   } else if (y[i] - diam[i]/2 <= 0) {
     velY[i] = abs(velY[i]);
   }
+<<<<<<< HEAD
 if (x[i] + diam[i]/2 >= width) {
     velX[i] = -abs(velX[i]);    //if the ball hits the right wall, assign x velocity the negative version of itself
   } else if (x[i] - diam[i]/2 <= 0) {
@@ -55,3 +56,11 @@ if (x[i] + diam[i]/2 >= width) {
   }
 }
 }
+=======
+  if (y + diam/2 >= height) {
+    velY = -abs(velY);
+  } else if (y - diam/2 <= 0) {
+    velY = abs(velY);
+  }
+}
+>>>>>>> refs/remotes/UCMHSProgramming2015/master
