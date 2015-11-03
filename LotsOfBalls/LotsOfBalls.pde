@@ -16,7 +16,7 @@ void setup() {
   for (int i = 0; i < count; i++) {
     x[i] = width/2;
     y[i] = height/2;
-    diam[i] = random (0, 100);
+    diam[i] = random (20, 100);
     velX[i] = random(-5, 5);
     velY[i] = random(-5, 5);
     i++;
