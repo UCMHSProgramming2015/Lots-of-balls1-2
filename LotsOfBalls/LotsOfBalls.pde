@@ -13,7 +13,7 @@
 
 
 //declare arrays
-int count = 50;
+int count = 600;
 float[] x = new float[count];
 float[] y = new float[count];
 float[] velX = new float[count];
@@ -26,17 +26,13 @@ void setup() {
   //set size of canvas
   size(800, 600);
   
-  //declare a local variable called i
-  int i = 0;
-
   //initialize variables
-  while (i < count) {
+  for (int i = 0; i < count; i++) {
     x[i] = random(width);
     y[i] = random(height);
     diam[i] = random(5,100);
     velX[i] = random(-5,5);
     velY[i] = random(-5,5);
-    i++;
   }
 }
 
