@@ -1,5 +1,5 @@
 //make the array contain 50 components
-int count = 50;
+int count = 20;
 //initializes the pieces of the array
 float[] x = new float[count];
 float[] y = new float[count];
