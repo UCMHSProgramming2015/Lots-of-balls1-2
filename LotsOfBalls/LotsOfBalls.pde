@@ -29,8 +29,6 @@ void setup() {
     b[i] = random(0,255);
     i++; //increase i by 1 during each cycle; have different instances of the above variables for each ball
   }
-  
-  //initialize variables
 }
 
 void draw() { 
