@@ -42,7 +42,7 @@ class Ball{
   }
 }
 
-int bnum = 300;
+int bnum = 100;
 
 Ball[] balls = new Ball[bnum];
 
@@ -53,6 +53,7 @@ void setup() {
   //set size of canvas
   size(800, 600);
   
+  //initialize all of the balls
   for(int i = 0; i < bnum; i++){
     balls[i] = new Ball();
   }
