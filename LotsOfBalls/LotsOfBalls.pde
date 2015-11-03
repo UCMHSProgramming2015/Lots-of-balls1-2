@@ -1,25 +1,52 @@
 //declare variables
 
 ArrayList<Ball> balls = new ArrayList<Ball>();
+int count = 2;
+float[] xpos = new float[count];
+float[] ypos = new float[count];
+float[] dX = new float[count];
+float[] dY = new float[count];
+
 void setup() {
   //set size of canvas
   size(800, 600);
   //initialize variables
   smooth();
-  balls.add(new Ball());                //adds two balls to start
+  for (int i=0; i<count; i++) {
+    xpos[i]=300;
+    ypos[i]=500;
+    dX[i]=random(-7, 7);
+    dY[i]=random(-7, 7);
+  }
+  balls.add(new Ball());
   balls.add(new Ball());
 }
 
 void draw() {
+  background(100);
+  for (int i=0; i<count; i++) {
+    fill(255);
+    ellipse(xpos[i], ypos[i], 30, 30);
+    xpos[i] += dX[i];
+    ypos[i] += dY[i];
+  }
+  for (int i=0; i<count; i++) {
+    if (ypos[i] +15 >= height) {
+      dY[i] = -abs(dY[i]);
+    } else if (ypos[i] - 15 <= 0) {
+      dY[i] = abs(dY[i]);
+    } else if (xpos[i]-15<0 ||xpos[i]+15>width) {
+      dX[i]*=-1;
+    }
+  }
   //pressing a will add more balls
   if (keyPressed) {
     if (key == 'a') {
       balls.add(new Ball());
     }
-   //pressing b will remove balls
-    if (key== 'b'&&balls.size()>2) {
-      balls.remove(balls.size()-1);      //always has the first two original ones
-
+    //pressing b will remove balls
+    if (key== 'b'&&balls.size()>0) {
+      balls.remove(0);
     }
   }
 
@@ -31,7 +58,7 @@ void draw() {
   //pulls balls from arraylist
   for (int i =0; i<balls.size(); i++) {
     Ball b = balls.get(i);
-    //draw ball
+
     b.display();
     b.move();
   }
@@ -62,6 +89,7 @@ class Ball {
     fill(a, b, c, d);
     ellipse(x, y, diam, diam);
   }
+
   void move() {
     //add velocity to position
     x += velX;
