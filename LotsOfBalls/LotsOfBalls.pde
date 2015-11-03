@@ -9,16 +9,15 @@
 //n = {35.6, 41.7, 2.00001};
 
 //declare arrays
-float[] x = new float[10];
-float[] y = new float[10];
-float[] a = new float[10];
-float[] b = new float[10];
-float[] diam = new float[10];
-float[] velX = new float[10];
-float[] velY = new float[10];
-float[] velA = new float[10];
-float[] velB = new float[10];
-int i = 0;
+float[] x = new float[100];
+float[] y = new float[100];
+float[] a = new float[100];
+float[] b = new float[100];
+float[] diam = new float[100];
+float[] velX = new float[100];
+float[] velY = new float[100];
+float[] velA = new float[100];
+float[] velB = new float[100];
 
 //declaring AND initializing arrays
 //int[] numbers = new int[200];
@@ -29,7 +28,7 @@ void setup() {
   size(800, 600);
 
   //initialize variables
-  while (i < 10) {
+  for (int i = 0; i < 100; i++) {
     x[i] = random(width);
     y[i] = random(height);
     velX[i] = random(-5, 5);
@@ -37,15 +36,13 @@ void setup() {
     velA[i] = random(-5, 5);
     velB[i] = random(-5, 5);
     diam[i] = random(5, 100);
-    i++;
   }
 }
 
 void draw() {
   //draw background to cover previous frame
   background(0);
-  int i = 0;
-  while (i < 10) {
+  for (int i = 0; i < 100; i++) {
 
 
     //draw balls
@@ -80,6 +77,5 @@ void draw() {
     } else if (b[i] - diam[i]/2 <= 0) {
       velB[i] = abs(velB[i]);
     }
-    i++;
   }
 }
