@@ -31,8 +31,8 @@ void setup() {
     x[i] = random(width);
     y[i] = random(height);
     diam[i] = random(5,100);
-    velX[i] = random(-5,5);
-    velY[i] = random(-5,5);
+    velX[i] = random(5,15);
+    velY[i] = random(5,15);
   }
 }
 
@@ -42,6 +42,8 @@ void draw() {
   int i = 0;
   while (i < count){
   //draw ball
+  fill(random(255),random(255),random(255));
+  stroke(random(255),random(255),random(255));
   ellipse(x[i], y[i], diam[i], diam[i]);
 
   //add velocity to position
