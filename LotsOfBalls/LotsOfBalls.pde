@@ -15,11 +15,13 @@ float[] y = new float[count];
 float[] velX = new float[count];
 float[] velY = new float[count];
 float[] diam = new float[count];
+float[] hue = new float[count];
 
 
 void setup() {
   //set size of canvas
   size(800, 600);
+  colorMode(HSB, 360, 100, 100, 100);
 
   //initialize variables
   int i = 0;
@@ -29,6 +31,7 @@ void setup() {
     velX[i] = random(-5, 5);
     velY[i] = random(-5, 5);
     diam[i] = random(20, 80);
+    hue[i] = random(360);
     i++;
   }
 }
@@ -39,6 +42,7 @@ void draw() {
 
   int i = 0;
   while (i < count) {
+    fill(hue[i], 100, 100, 70);
     //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
 
