@@ -18,8 +18,9 @@ void setup() {
     dX[i]=random(-7, 7);
     dY[i]=random(-7, 7);
   }
+  for(int i=0; i<count; i++){
   balls.add(new Ball());
-  balls.add(new Ball());
+  }
 }
 
 void draw() {
