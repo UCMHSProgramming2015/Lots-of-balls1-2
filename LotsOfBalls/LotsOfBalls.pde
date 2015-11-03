@@ -42,6 +42,7 @@ void draw() {
       velX[i] = abs(velX[i]);     
     }
 
+<<<<<<< HEAD
     if (y[i] + diam[i]/2 >= height) {
       velY[i] = -abs(velY[i]);
       fill(random(255),random(255),random(255));
@@ -49,5 +50,17 @@ void draw() {
       velY[i] = abs(velY[i]);
     }
     i++;
+=======
+  //bounce ball if it hits walls
+  if (x + diam/2 >= width) {
+    velX = -abs(velX);    //if the ball hits the right wall, assign x velocity the negative version of itself
+  } else if (x - diam/2 <= 0) {
+    velX = abs(velX);     //if the ball hits the left wall, assign x velocity the positive version of itself
+  }
+  if (y + diam/2 >= height) {
+    velY = -abs(velY);
+  } else if (y - diam/2 <= 0) {
+    velY = abs(velY);
+>>>>>>> refs/remotes/UCMHSProgramming2015/master
   }
 }
