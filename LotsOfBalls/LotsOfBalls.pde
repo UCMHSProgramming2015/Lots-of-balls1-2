@@ -12,8 +12,7 @@ int colorSet = 0;
 void setup() {
   //set size of canvas
   size(600, 600);
-  int i = 0;
-  while (i<150) {
+  for(int i=0; i<150; i++) {
     //initialize variables
     x[i] = random(width);
     y[i] = random(height);
@@ -23,15 +22,13 @@ void setup() {
     colorx[i]=x[i];
     colory[i]=y[i];
     colorz[i]=2*x[i]/y[i];
-    i++;
   }
 }
 
 void draw() {
   //draw background to cover previous frame
   background(0);
-  int i = 0;
-  while (i<150) {
+  for(int i=0; i<150; i++) {
     //set stroke weight and color
     strokeWeight(7);
     stroke(colorx[i], colory[i], colorz[i]);
@@ -73,8 +70,8 @@ void draw() {
     } else if (y[i] - diam/2 <= 0) {
      velY[i] = abs(velY[i]);
     }
-    i++;
   }
+ 
 }
 
 void mousePressed() {
