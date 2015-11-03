@@ -12,22 +12,21 @@ void setup() {
   size(800, 600);
 
   //initialize variables
-  int i = 0;
- while (i < count) {
+
+ for(int i = 0; i < count; i++) {
   x[i] = random(width);
   y[i] = random(height);
   diam[i] = 80;
   velX[i] = random(-10, 10);
   velY[i] = random(-10, 10);
-  i++;
+
  }
 }
 
 void draw() {
   //draw background to cover previous frame
   background(0);
-  int i = 0;
- while (i < count) {
+  for(int i = 0; i < count; i++) {
     //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
   
@@ -46,6 +45,5 @@ void draw() {
     } else if (y[i] - diam[i]/2 <= 0) {
       velY[i] = abs(velY[i]);
     }
-   i++;
  }
 }
