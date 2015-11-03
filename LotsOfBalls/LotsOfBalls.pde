@@ -1,6 +1,7 @@
 //declare variables
 int count=200;
 
+//create arrays 
 float[]x=new float[count];
 float[]y=new float[count];
 float[]velX=new float[count];
@@ -11,10 +12,10 @@ void setup() {
   //set size of canvas
   size(800, 600);
 
-  //initialize local variables
+  //create a for statement delcalring int i, telling it to run when i is less than count, and incrementing it by one
   for (int i=0; i < count; i++) {
 
-    //create a while statement
+    //define positions of balls referring to the array
     x[i]=random(width);
     x[i]=random(height);
     velX[i]=random(-5, 5);
@@ -27,17 +28,13 @@ void draw() {
   //draw background to cover previous frame
   background(0);
 
-  //redefine the local variable
-
-  //create a while statement
+  //create a for statement delcalring int i, telling it to run when i is less than count, and incrementing it by one
   for (int i=0; i <count; i++) {
 
-    //draw balls
+    //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
 
-    //add velocity to position
-    x[0] += velX[0];
-    y[0] += velY[0];
+    //add velocity to positions referring to the array
     x[i] += velX[i];
     y[i] += velY[i];
 
@@ -47,11 +44,10 @@ void draw() {
       fill(100, 180, 250); //if the ball hits the right wall it changes color
     } else if (x[i] - diam[i]/2 <= 0) {
       velX[i] = abs(velX[i]);     //if the ball hits the left wall, assign x velocity the positive version of itself
-      fill(100, 250, 150);
     }
     if (y[i] + diam[i]/2 >= height) { //if the ball hits the top wall, assign y velocity the positive version of itself
       velY[i] = -abs(velY[i]);
-      fill(200, 250, 250);
+      fill(200, 250, 250); //if the ball hits the right wall it changes color
     } else if (y[i] - diam[i]/2 <= 0) { //if the ball hits the bottom wall, assign y velocity the positive version of itself
       velY[i] = abs(velY[i]);
     }
