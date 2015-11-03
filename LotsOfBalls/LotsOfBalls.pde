@@ -1,5 +1,5 @@
 //declare variables
-int c = 10;
+int c = 100;
 int i;
 //declare array
 float[] x = new float[c];
