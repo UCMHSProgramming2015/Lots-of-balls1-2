@@ -27,7 +27,7 @@ void setup() {
   }
 
   //initialize variables
-diam = 20;
+diam = 30;
 }
 
 void draw() {
@@ -36,7 +36,8 @@ void draw() {
 
   //draw ball
   for(int i = 0; i < c; i++){
-    fill(red[i], 0, blue[i]);
+    noStroke();
+    fill(red[i], 0, blue[i], random(150));
     ellipse(x[i], y[i], diam, diam);
 
   //add velocity to position
