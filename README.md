@@ -1,4 +1,4 @@
-# Lots of Balls: Block 1-2
+# Lots of Balls
 
 This readme will give you the directions needed to get started with the assignment for today.
 First, a quick overview:
@@ -24,5 +24,5 @@ In a software development context, a Pull Request in Git is how somebody who's w
 # Goals for this assignment
 In this assignment, we're going to create many bouncing balls. In the process of doing so, we'll be reviewing for loops, reviewing Git, and introducing arrays.
 
-# Assignment for 10/28
-Fork this repository and clone it so you have a local repository. Add a second ball to the code. Create a Pull Request.
+# Do Now: Day 1
+Fork this repository and clone it so you have a local repository. Add a second ball to the code. Commit as "Added a second ball"

@@ -84,6 +84,7 @@ class Ball {
     velX = random(-5, 5);
     velY = random(-5, 5);
   }
+<<<<<<< HEAD
   //displays each ball
   void display() {
     noStroke();
@@ -107,5 +108,11 @@ class Ball {
     } else if (y - diam/2 <= 0) {
       velY = abs(velY);
     }
+=======
+  if (y + diam/2 >= height) {
+    velY = -abs(velY);
+  } else if (y - diam/2 <= 0) {
+    velY = abs(velY);
+>>>>>>> refs/remotes/UCMHSProgramming2015/master
   }
 }
