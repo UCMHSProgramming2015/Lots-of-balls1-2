@@ -8,17 +8,15 @@ float[] diam = new float[count];
 
 void setup() {
   size(800, 600);
-  int i = 0;
   colorMode(HSB,width,100,100);
   smooth();
-  while (i < count)
+  for(int i = 0;i < count; i++)
   {
     x[i] = random(width);
     y[i]= random(height);
     diam[i] = 15;
     velX[i] = random(-5, 5);
     velY[i] = random(-5, 5);
-    i++;
   }
 }
 
@@ -26,8 +24,7 @@ void draw() {
   background(0);
   noStroke();
   fill(map(width,0,width,0,width),map(width,0,height,0,width),random(200));
-  int i = 0;
-  while (i < count)
+  for(int i = 0;i < count; i++)
   {
   fill(x[i],y[i],200);
   ellipse(x[i], y[i], diam[i], diam[i]);
@@ -43,6 +40,5 @@ void draw() {
   } else if (y[i] - diam[i]/2 <= 0) {
     velY[i] = abs(velY[i]);
   }
-  i++;
   }
 }
