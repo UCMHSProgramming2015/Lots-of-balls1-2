@@ -1,5 +1,5 @@
 //declare variables
-int count = 400;
+int count = 500;
 float [] x = new float[count]; 
 float [] y = new float[count]; 
 float [] velX = new float[count]; 
@@ -27,7 +27,7 @@ void draw() {
   background(0);
 
 
-for (int i = 0; i<count; i++){
+for (int i = 0; i < count; i++){
   //draw ball
   ellipse(x[i], y[i], diam[i], diam[i]);
   
@@ -47,5 +47,5 @@ for (int i = 0; i<count; i++){
   } else if (y[i] - diam[i]/2 <= 0) {
     velY[i] = abs(velY[i]);
   }
-}
+} 
 }
