@@ -1,5 +1,5 @@
 //declare variables
-int count =10;
+int count =1000;
 //declare arrays
 float []x= new float[count];
 float []y= new float[count];
@@ -12,15 +12,13 @@ void setup() {
   //set size of canvas
   size(800, 600);
   //initialize local variable
-  int i=0;
-  while (i<count) {
+  for (int i=0; i<count; i++){
     //initialize variables
-    x [i]= width/2;
-    y [i]= height/2;
-    d [i]= 80;
+    x [i]= random(width);
+    y [i]= random(height);
+    d [i]= random(10);
     vx[i] = random(-5, 5);
     vy [i]= random(-5, 5);
-    i++;
   }
 }
 
@@ -29,8 +27,8 @@ void draw() {
   background(0);
 
 //initialize local variable
-  int i=0;
-  while (i<count) {
+  for (int i=0; i<count; i++){
+    fill(random(255),random(255),random(255));
     //draw ball
     ellipse(x [i], y [i], d [i], d [i]);
 
@@ -49,6 +47,5 @@ void draw() {
     } else if (y [i]-d [i]/2<= 0 ) {
       vy [i]*=-1;
     }
-    i++;
   }
 }
