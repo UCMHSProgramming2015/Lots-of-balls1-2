@@ -2,6 +2,7 @@
 
 ArrayList<Ball> balls = new ArrayList<Ball>();
 int count = 2;
+int acc = 1;
 //declare arrays
 float[] xpos = new float[count];
 float[] ypos = new float[count];
@@ -14,8 +15,8 @@ void setup() {
   //initialize variables
   smooth();
   for (int i=0; i<count; i++) {
-    xpos[i]=300;
-    ypos[i]=500;
+    xpos[i]=400;
+    ypos[i]=0;
     dX[i]=random(-7, 7);
     dY[i]=random(-7, 7);
   }
@@ -31,6 +32,10 @@ void draw() {
   for (int i=0; i<count; i++) {
     fill(0);
     ellipse(xpos[i], ypos[i], 30, 30);
+    if (ypos[i]<height){
+      dY[i] += acc;
+    }
+    
     xpos[i] += dX[i];
     ypos[i] += dY[i];
     
