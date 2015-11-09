@@ -2,6 +2,7 @@
 
 ArrayList<Ball> balls = new ArrayList<Ball>();
 int count = 2;
+//declare arrays
 float[] xpos = new float[count];
 float[] ypos = new float[count];
 float[] dX = new float[count];
@@ -18,19 +19,23 @@ void setup() {
     dX[i]=random(-7, 7);
     dY[i]=random(-7, 7);
   }
-  for(int i=0; i<count; i++){
-  balls.add(new Ball());
-  }
+  /*for (int i=0; i<count; i++) {
+    balls.add(new Ball());
+  }*/
 }
 
 void draw() {
-  background(100);
+  //set background
+  background(255);
+  //for each ball, move then display
   for (int i=0; i<count; i++) {
-    fill(255);
+    fill(0);
     ellipse(xpos[i], ypos[i], 30, 30);
     xpos[i] += dX[i];
     ypos[i] += dY[i];
+    
   }
+  //update ball's path
   for (int i=0; i<count; i++) {
     if (ypos[i] +15 >= height) {
       dY[i] = -abs(dY[i]);
@@ -52,7 +57,7 @@ void draw() {
   }
 
   //draw background to cover previous frame
-  background(255);
+  
   fill(0);
   //direction text 
   text("press a to add more, b for less", 375, 50);
@@ -84,7 +89,6 @@ class Ball {
     velX = random(-5, 5);
     velY = random(-5, 5);
   }
-<<<<<<< HEAD
   //displays each ball
   void display() {
     noStroke();
@@ -108,11 +112,11 @@ class Ball {
     } else if (y - diam/2 <= 0) {
       velY = abs(velY);
     }
-=======
-  if (y + diam/2 >= height) {
-    velY = -abs(velY);
-  } else if (y - diam/2 <= 0) {
-    velY = abs(velY);
->>>>>>> refs/remotes/UCMHSProgramming2015/master
+
+    if (y + diam/2 >= height) {
+      velY = -abs(velY);
+    } else if (y - diam/2 <= 0) {
+      velY = abs(velY);
+    }
   }
 }
