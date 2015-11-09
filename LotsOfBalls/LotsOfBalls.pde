@@ -61,7 +61,7 @@ void draw() {
       velY[i] = abs(velY[i]); 
     }
     
-    //define circle size increase/decrease
+    //define whether circle size increases/decreases
     if(diam[i] >= 100){
       inc[i] = 1;
     }else if(diam[i] <= 5){
