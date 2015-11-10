@@ -2,7 +2,7 @@ float[] x= new float [100];
 float[] y= new float [100];
 float[] velX= new float [100];
 float[] velY= new float [100] ;
-float diam;
+float diam; //declaring variables and arrays
 
 void setup() {
   //set size of canvas
@@ -12,14 +12,14 @@ void setup() {
      y[i] = random(height);
      velX[i] = 5;
      velY[i] = 6;   
-     diam = 45;
+     diam = 45; //initializing values
   }
  }
 
 void draw() {
-      //draw background to cover previous frame
-  background(0);
-  for(int i=0; i<100; i++){
+     
+  background(0); //setting background
+  for(int i=0; i<100; i++){  //only applying to 100 balls
  
     //draw balls
     fill(255,35,345);
