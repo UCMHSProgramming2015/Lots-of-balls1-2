@@ -1,38 +1,48 @@
-//declare variables
-float x, y, velX, velY, diam;
+int num = 12;
+
+float[] x = new float[num]; //create varibales
+float[] y = new float[num];
+float[] xVelocity = new float[num];
+float[] yVelocity = new float[num];
+float[] diam = new float [num];
 
 void setup() {
-  //set size of canvas
-  size(800, 600);
-
-  //initialize variables
-  x = width/2;
-  y = height/2;
-  diam = 80;
-  velX = random(-5, 5);
-  velY = random(-5, 5);
+  colorMode(HSB, 360,100,100,100); //create colors tha5 change
+  size(800,600);
+  strokeWeight(10);
+  
+  for (int i=0; i <num;i++) {            //i variable
+     x[i] = random(width*.25, width*.75); //random placement
+    y[i] = random(height*.25, height*.75);
+    xVelocity[i] = random(-5, 5);   // speeds
+    yVelocity[i] = random(-5, 5);
+    diam[i] = random(3, 100);
+  }
 }
 
 void draw() {
-  //draw background to cover previous frame
   background(0);
-
-  //draw ball
-  ellipse(x, y, diam, diam);
-
-  //add velocity to position
-  x += velX;
-  y += velY;
-
-  //bounce ball if it hits walls
-  if (x + diam/2 >= width) {
-    velX = -abs(velX);    //if the ball hits the right wall, assign x velocity the negative version of itself
-  } else if (x - diam/2 <= 0) {
-    velX = abs(velX);     //if the ball hits the left wall, assign x velocity the positive version of itself
-  }
-  if (y + diam/2 >= height) {
-    velY = -abs(velY);
-  } else if (y - diam/2 <= 0) {
-    velY = abs(velY);
+  fill(frameCount%360, 50,50);  //how fast the balls change
+  for (int i=0; i<num; i++) {
+    ellipse(x[i],y[i],diam[i],diam[i]);
+     x[i] += xVelocity[i];          //changes the velocity
+     y[i] += yVelocity[i];
+     
+     if (x[i] >= width || x[i] <= 0) {    //reverse direction
+      xVelocity[i] *= -1;
+      
+     if (y[i] >= width || y[i] <= 0) {
+       yVelocity[i] *= -1;
+       
+       
+      
+      
+       
+     }
+     }
   }
 }
+
+     
+    
+  
